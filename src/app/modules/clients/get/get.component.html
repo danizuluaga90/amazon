@@ -1,1 +1,39 @@
-<p>get works!</p>
+<div class="container">
+  <br>
+  <a routerLink="/clients/create" class="btn">Registrar Cliente</a>
+
+  <table class="table responsive">
+    <thead>
+    <tr>
+      <th>Documento</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Pais</th>
+      <th>Ciudad</th>
+      <th>Departamento</th>
+      <th>Direccion</th>
+      <th>Correo</th>
+      <th>Telefono</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let p of listado">
+      <td>{{p.document}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.lastname}}</td>
+      <td>{{p.country}}</td>
+      <td>{{p.city}}</td>
+      <td>{{p.state}}</td>
+      <td>{{p.address}}</td>
+      <td>{{p.email}}</td>
+      <td>{{p.phone}}</td>
+      <td>
+        <a routerLink="/clients/{{p.id}}/edit" class="btn">Editar</a>
+        <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,47 @@
-<p>create works!</p>
+<div class="container">
+  <h3 class="center-align">Registrar Servicio</h3>
+  <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="create()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="origin" type="text" class="validate">
+        <label for="origin">Origen</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="destination" type="text" class="validate">
+        <label for="destination">Destino</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="date" type="text" class="validate">
+        <label for="date">Fecha</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="time" type="text" class="validate">
+        <label for="time">Hora</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="collectionId" type="text" class="validate">
+        <label for="collectionId">Encomienda</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="value" type="text" class="validate">
+        <label for="value">Valor</label>
+      </div>
+    </div>
+
+    <div class="row center-align">
+      <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>

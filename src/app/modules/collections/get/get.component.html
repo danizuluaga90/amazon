@@ -1,1 +1,29 @@
-<p>get works!</p>
+<div class="container">
+  <br>
+  <a routerLink="/collections/create" class="btn">Registrar Encomienda</a>
+
+  <table class="table responsive">
+    <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Peso</th>
+      <th>Tipo</th>
+      <th>Presentacion</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let p of listado">
+      <td>{{p.description}}</td>
+      <td>{{p.weight}}</td>
+      <td>{{p.type}}</td>
+      <td>{{p.presentation}}</td>
+      <td>
+        <a routerLink="/collections/{{p.id}}/edit" class="btn">Editar</a>
+        <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

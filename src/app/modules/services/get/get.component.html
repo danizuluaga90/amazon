@@ -1,1 +1,33 @@
-<p>get works!</p>
+<div class="container">
+  <br>
+  <a routerLink="/services/create" class="btn">Registrar Servicio</a>
+
+  <table class="table responsive">
+    <thead>
+    <tr>
+      <th>Origen</th>
+      <th>Destino</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Encomienda</th>
+      <th>Valor</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let p of listado">
+      <td>{{p.origin}}</td>
+      <td>{{p.destination}}</td>
+      <td>{{p.date}}</td>
+      <td>{{p.time}}</td>
+      <td>{{p.collectionId}}</td>
+      <td>{{p.value}}</td>
+      <td>
+        <a routerLink="/services/{{p.id}}/edit" class="btn">Editar</a>
+        <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

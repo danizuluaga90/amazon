@@ -8,7 +8,7 @@ import {RecoverPasswordComponent} from "./recover-password/recover-password.comp
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },{
     path: 'logout',
     component: LogoutComponent,

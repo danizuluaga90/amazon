@@ -1,10 +1,14 @@
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper teal darken-3">
     <a href="#" class="brand-logo">Logo</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="sass.html">Inicio</a></li>
-      <li><a href="badges.html">Encomiendas</a></li>
-      <li><a href="collapsible.html">Usuario</a></li>
+      <li><a routerLink="/index">Inicio</a></li>
+      <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
+      <li *ngIf="activeSession"><a routerLink="/collections/get">Encomiendas</a></li>
+      <li *ngIf="activeSession"><a routerLink="/clients/get">Clientes</a></li>
+      <li *ngIf="activeSession"><a routerLink="/services/get">Servicios</a></li>
+      <li *ngIf="!activeSession"><a routerLink="/security/login">Login</a></li>
+      <li *ngIf="activeSession"><a routerLink="/security/logout">Logout</a></li>
     </ul>
   </div>
 </nav>
